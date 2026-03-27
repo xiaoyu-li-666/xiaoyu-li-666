@@ -2,7 +2,7 @@
 # Hi, I'm Xiaoyu Li 👋
 
 🎓 Ph.D. Candidate (ABD) | Texas A&M University  
-🌡️ Urban Climate | Thermal Comfort | Digital Twin | AI  
+🌡️ Urban Climate | Thermal Comfort | Digital Twin 
 📍 College Station, TX  
 
 ---
