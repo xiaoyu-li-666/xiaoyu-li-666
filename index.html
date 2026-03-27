@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xiaoyu Li | Portfolio</title>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: rgba(255,255,255,0.78);
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: rgba(15, 23, 42, 0.08);
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.1);
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 32%),
+        radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.08), transparent 25%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(247, 248, 252, 0.7);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 72px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      backdrop-filter: blur(10px);
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 58ch;
+      margin-bottom: 22px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 600;
+      transition: 0.2s ease;
+      background: white;
+    }
+
+    .btn.primary {
+      background: var(--text);
+      color: white;
+      border-color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      height: 100%;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 18px 0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.94rem;
+      color: #334155;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .item {
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.72);
+    }
+
+    .item-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .item h3 {
+      font-size: 1.03rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .pub {
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: white;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    .footer {
+      padding: 40px 0 60px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .two-col,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">Xiaoyu Li</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero wrap">
+    <div class="hero-grid">
+      <div class="card">
+        <div class="tag">MLA · Ph.D. Candidate (ABD)</div>
+        <h1>Designing healthier urban environments through climate, landscape, and data.</h1>
+        <p class="lead">
+          I am Xiaoyu Li, a Ph.D. Candidate at Texas A&amp;M University. My work focuses on urban microclimate,
+          thermal comfort, aging populations, and evidence-based landscape design.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:lxy819457986@tamu.edu">Email Me</a>
+          <a class="btn" href="https://github.com/xiaoyu-li-666" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="card stat-grid">
+        <div class="stat"><strong>180+</strong><span>Citations</span></div>
+        <div class="stat"><strong>5</strong><span>h10-index</span></div>
+        <div class="stat"><strong>20+</strong><span>Capstone projects mentored</span></div>
+        <div class="stat"><strong>8+</strong><span>Courses taught / assisted</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="about">
+      <div class="two-col">
+        <div class="card">
+          <h2 class="section-title">About</h2>
+          <p class="section-sub">
+            My interdisciplinary research connects landscape architecture, public health, and geospatial analytics.
+            I investigate how urban form and environmental exposure shape thermal comfort, health, and resilience.
+          </p>
+          <div class="pill-list">
+            <span class="pill">Urban Environment</span>
+            <span class="pill">Microclimate</span>
+            <span class="pill">Thermal Comfort</span>
+            <span class="pill">Heat Vulnerability</span>
+            <span class="pill">Digital Twin</span>
+            <span class="pill">LiDAR</span>
+            <span class="pill">Machine Learning</span>
+            <span class="pill">Landscape Performance</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="section-title">Education</h2>
+          <div class="timeline">
+            <div class="item">
+              <div class="item-top">
+                <h3>Texas A&amp;M University</h3>
+                <span class="meta">2022 – 2026</span>
+              </div>
+              <p>Ph.D. Candidate in Urban &amp; Regional Science</p>
+            </div>
+            <div class="item">
+              <div class="item-top">
+                <h3>Texas A&amp;M University</h3>
+                <span class="meta">2019 – 2022</span>
+              </div>
+              <p>Master of Landscape Architecture</p>
+            </div>
+            <div class="item">
+              <div class="item-top">
+                <h3>Southwest University</h3>
+                <span class="meta">2014 – 2018</span>
+              </div>
+              <p>Bachelor of Engineering in Landscape Architecture</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="card">
+        <h2 class="section-title">Selected Research</h2>
+        <p class="section-sub">A few themes that define my recent work.</p>
+        <div class="two-col">
+          <div class="timeline">
+            <div class="item">
+              <h3>Older Adults and Thermal Comfort</h3>
+              <p class="meta">Health · Biometeorology · Environmental exposure</p>
+              <p>Developing age-appropriate thermal comfort models and evaluating heat exposure in daily living environments.</p>
+            </div>
+            <div class="item">
+              <h3>LiDAR and 3D Urban Morphology</h3>
+              <p class="meta">Geospatial analytics · Urban form · Fine-scale assessment</p>
+              <p>Linking three-dimensional green space and urban form characteristics to microscale thermal conditions.</p>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="item">
+              <h3>Landscape Design for Heat Mitigation</h3>
+              <p class="meta">Evidence-based design · Urban resilience</p>
+              <p>Translating climate measurements and simulation into practical landscape strategies for cooler cities.</p>
+            </div>
+            <div class="item">
+              <h3>Digital Twin and Human-Centered Urban Science</h3>
+              <p class="meta">Modeling · Public health · Urban analytics</p>
+              <p>Combining environmental modeling, behavioral data, and machine learning to support healthier urban environments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="two-col">
+        <div class="card">
+          <h2 class="section-title">Experience</h2>
+          <div class="timeline">
+            <div class="item">
+              <div class="item-top">
+                <h3>Project Coordinator · NIH-funded R01 Project</h3>
+                <span class="meta">2023 – Present</span>
+              </div>
+              <p>Coordinating project administration, IRB compliance, reporting, communication, and documentation for heat-health research on aging populations in public housing.</p>
+            </div>
+            <div class="item">
+              <div class="item-top">
+                <h3>Instructor of Record · Texas A&amp;M University</h3>
+                <span class="meta">2023 – Present</span>
+              </div>
+              <p>Teaching and mentoring in open space planning, land use planning, and capstone-based urban studies.</p>
+            </div>
+            <div class="item">
+              <div class="item-top">
+                <h3>Landscape Designer · Sangtian Island National Laboratory</h3>
+                <span class="meta">2022 – 2025</span>
+              </div>
+              <p>Worked on landscape design, construction documentation, and interior design in professional practice.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="section-title">Awards & Recognition</h2>
+          <div class="timeline">
+            <div class="item">
+              <div class="item-top">
+                <h3>ASLA Student Honor Awards</h3>
+                <span class="meta">2022</span>
+              </div>
+              <p>Research Category for “Thermalscape Tactics – Solutions in Response to Ubiquitous Heat Threat in El Paso”.</p>
+            </div>
+            <div class="item">
+              <div class="item-top">
+                <h3>Health City Design Award</h3>
+                <span class="meta">2025</span>
+              </div>
+              <p>Two projects selected as Highly Commended in healthy neighborhoods and regenerative public realm categories.</p>
+            </div>
+            <div class="item">
+              <div class="item-top">
+                <h3>Texas ASLA Honor Award</h3>
+                <span class="meta">2026</span>
+              </div>
+              <p>Recognition for contributions to contemporary landscape performance methods and techniques.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="card">
+        <h2 class="section-title">Selected Publications</h2>
+        <div class="pub-list">
+          <div class="pub">Li, X. et al. (2025). A novel thermal comfort model for older adults – development and validation of the COMFA-OA model. <em>Building &amp; Environment</em>.</div>
+          <div class="pub">Li, X., Peng, J., Li, D., &amp; Brown, R. D. (2023). A Framework for Evidence-Based Landscape Architecture: Cooling a Hot Urban Climate through Design. <em>Sustainability</em>.</div>
+          <div class="pub">Li, X. et al. (2022). Ameliorating cold stress in a hot climate: Effect of Winter Storm Uri on residents of subsidized housing neighborhoods. <em>Building and Environment</em>.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div class="card">
+          <h2 class="section-title">Get in touch</h2>
+          <p class="section-sub">
+            I am open to academic collaboration, research exchange, and interdisciplinary projects in urban climate, public health, and landscape performance.
+          </p>
+          <div class="timeline">
+            <div class="item"><strong>Email</strong><br><span class="meta">lxy819457986@tamu.edu</span></div>
+            <div class="item"><strong>Institution</strong><br><span class="meta">School of Architecture, Texas A&amp;M University</span></div>
+            <div class="item"><strong>Phone</strong><br><span class="meta">979-739-2769</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="section-title">Quick Notes</h2>
+          <div class="timeline">
+            <div class="item">
+              <h3>Tip 1</h3>
+              <p>Replace the LinkedIn link with your real profile URL.</p>
+            </div>
+            <div class="item">
+              <h3>Tip 2</h3>
+              <p>Add a headshot named <code>avatar.jpg</code> if you want a more personal homepage.</p>
+            </div>
+            <div class="item">
+              <h3>Tip 3</h3>
+              <p>You can later add sections like CV, Projects, Teaching, or News.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    © 2026 Xiaoyu Li · Built with GitHub Pages
+  </footer>
+</body>
+</html>
