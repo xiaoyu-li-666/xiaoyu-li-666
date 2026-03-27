@@ -39,7 +39,7 @@ My research focuses on **designing healthier and climate-resilient environments*
 - 👨‍🎓 20+ students mentored  
 - 🧪 4.5+ years research experience  
 - 🎨 3+ years design experience  
-- 🎓 8+ courses taught  
+- 🎓 8+ courses taught / assisted (3 instructor of record; 5+ courses assisted/designed)
 
 ---
 
