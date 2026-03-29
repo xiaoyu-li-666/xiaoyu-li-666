@@ -116,7 +116,7 @@
       display: grid;
       grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
       gap: 32px;
-      align-items: center;
+      align-items: stretch;
     }
 
     .hero-main,
@@ -137,6 +137,7 @@
     }
 
     .hero-main {
+      height: 100%;
       padding: 42px;
       background:
         radial-gradient(circle at top left, rgba(183, 134, 82, 0.14), transparent 34%),
@@ -221,7 +222,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
+      margin-top: auto;
     }
 
     .button,
@@ -856,6 +857,7 @@
       }
 
       .hero-profile-card {
+        height: 100%;
         padding: 20px 16px 18px;
       }
 
@@ -994,9 +996,12 @@
         <div class="highlight-banner">
           <div class="highlight-badge">New</div>
           <div>
-            <h2 class="highlight-title">Featured publication: COMFA-OA thermal comfort model</h2>
+            <h2 class="highlight-title">
+              Featured: COMFA-OA thermal comfort model
+            </h2>
+            
             <p class="highlight-text">
-              A novel thermal comfort model for older adults, developed and validated for age-appropriate outdoor assessment.
+              A validated thermal comfort model for older adults, supported by open-source code, example datasets, and an interactive web-based calculator for research and design applications.
             </p>
           </div>
           <a class="button-secondary" href="#publications" style="border-color: rgba(255,255,255,0.38); color: #fff;">Read More</a>
@@ -1135,13 +1140,31 @@
             </div>
             <div class="feature-content">
               <div class="feature-meta">Featured Article · 2025</div>
-              <h3 class="feature-title">A novel thermal comfort model for older adults – development and validation of the COMFA-OA model</h3>
+              
+              <h3 class="feature-title">
+                A novel thermal comfort model for older adults – development and validation of the COMFA-OA model
+              </h3>
+              
               <p class="feature-desc">
-                <em>Building &amp; Environment</em>. Development and validation of an age-appropriate thermal comfort model for older adults.
+                <em>Building &amp; Environment</em>. Development and validation of an age-appropriate thermal comfort model for older adults, integrating physiological adjustments and outdoor energy balance modeling.
               </p>
+              
               <div class="item-links">
-                <span class="muted">Li, X., Zhang, Y., Sang, H., Lee, C., Sullivan, W., Maddock, J., Li, D., &amp; Brown, D. R.</span>
+                <span class="muted">
+                  Li, X., Zhang, Y., Sang, H., Lee, C., Sullivan, W., Maddock, J., Li, D., &amp; Brown, D. R.
+                </span>
               </div>
+              
+              <!-- 新增：工具入口 -->
+              <div class="item-links" style="margin-top:10px;">
+                <a class="text-link" href="https://github.com/xiaoyu-li-666/COMFA-OA-model" target="_blank">GitHub Repository</a>
+                <a class="text-link" href="https://comfa.shinyapps.io/10_shinnyapp/" target="_blank">Web Calculator</a>
+              </div>
+              
+              <!-- 新增：说明 -->
+              <p class="feature-desc" style="margin-top:10px;">
+                The COMFA-OA model is supported by an open-source implementation, including Python and R workflows, example datasets, and an interactive Shiny-based web calculator for research and design applications.
+              </p>
             </div>
           </article>
 
