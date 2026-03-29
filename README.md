@@ -1,9 +1,9 @@
 ## Hi there 👋
+
+# I AM
 # Xiaoyu Li
 
 🌐 Personal Website: [https://xiaoyu-li-666.github.io](https://xiaoyu-li-666.github.io/xiaoyu-li-666/)
-
-# Xiaoyu Li
 
 **Ph.D. Candidate in Urban & Regional Science**
 Texas A&M University
