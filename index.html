@@ -152,8 +152,12 @@
       padding: 30px 22px 24px;
       display: flex;
       flex-direction: column;
+    
+      justify-content: center;   /* Y轴居中 */
       align-items: center;
+    
       text-align: center;
+      height: 100%;              /* ⭐关键 */
     }
 
     .eyebrow {
@@ -856,11 +860,6 @@
         font-size: clamp(1.65rem, 7vw, 2.2rem);
       }
 
-      .hero-profile-card {
-        height: 100%;
-        padding: 20px 16px 18px;
-      }
-
       .portrait {
         width: min(100%, 190px);
       }
@@ -1185,7 +1184,7 @@
         <div class="section-head">
           <h2 class="section-title">Research and design projects</h2>
           <p class="section-intro">
-            Left: research experience. Right: teaching experience. Both image frames keep the same rounded, cropped size.
+            I combine research and design.
           </p>
         </div>
 
