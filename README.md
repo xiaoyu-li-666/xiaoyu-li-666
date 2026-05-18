@@ -95,8 +95,8 @@ A validated thermal comfort model specifically designed for older adults.
 
 ## 🏆 Highlights
 
-* 180+ citations
-* 20+ student projects mentored
+* 200+ citations
+* 20+ students' capstone projects mentored
 * 8+ courses taught or assisted
 * NIH-funded research involvement
 
