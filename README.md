@@ -5,7 +5,7 @@
 
 🌐 Personal Website: [https://xiaoyu-li-666.github.io](https://xiaoyu-li-666.github.io/xiaoyu-li-666/)
 
-**Ph.D. Candidate in Urban & Regional Science， Final defense passed. Oct.05.2026**
+**Ph.D. Candidate in Urban & Regional Science, Final defense passed. Oct.05.2026**
 Texas A&M University
 
 Research on **urban microclimate, thermal comfort, healthy aging, and climate-responsive landscape design**.
